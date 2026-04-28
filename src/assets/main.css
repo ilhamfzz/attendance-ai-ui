@@ -1,0 +1,118 @@
+:root {
+  --color-surface: 252 248 255;
+  --color-surface-dim: 220 216 229;
+  --color-surface-bright: 252 248 255;
+  --color-surface-container-lowest: 255 255 255;
+  --color-surface-container-low: 245 242 255;
+  --color-surface-container: 240 236 249;
+  --color-surface-container-high: 234 230 243;
+  --color-surface-container-highest: 228 225 238;
+  --color-on-surface: 27 27 36;
+  --color-on-surface-variant: 70 69 85;
+  --color-inverse-surface: 48 47 57;
+  --color-inverse-on-surface: 243 239 252;
+  --color-outline: 119 117 135;
+  --color-outline-variant: 199 196 216;
+  --color-surface-tint: 78 68 226;
+  --color-primary: 62 50 211;
+  --color-on-primary: 255 255 255;
+  --color-primary-container: 88 80 236;
+  --color-on-primary-container: 233 229 255;
+  --color-inverse-primary: 195 192 255;
+  --color-secondary: 86 94 116;
+  --color-on-secondary: 255 255 255;
+  --color-secondary-container: 218 226 253;
+  --color-on-secondary-container: 92 100 122;
+  --color-tertiary: 136 56 0;
+  --color-on-tertiary: 255 255 255;
+  --color-tertiary-container: 174 74 0;
+  --color-on-tertiary-container: 255 227 214;
+  --color-error: 186 26 26;
+  --color-on-error: 255 255 255;
+  --color-error-container: 255 218 214;
+  --color-on-error-container: 147 0 10;
+  --color-primary-fixed: 226 223 255;
+  --color-primary-fixed-dim: 195 192 255;
+  --color-on-primary-fixed: 15 0 105;
+  --color-on-primary-fixed-variant: 52 36 202;
+  --color-secondary-fixed: 218 226 253;
+  --color-secondary-fixed-dim: 190 198 224;
+  --color-on-secondary-fixed: 19 27 46;
+  --color-on-secondary-fixed-variant: 63 70 92;
+  --color-tertiary-fixed: 255 219 203;
+  --color-tertiary-fixed-dim: 255 182 145;
+  --color-on-tertiary-fixed: 52 17 0;
+  --color-on-tertiary-fixed-variant: 121 49 0;
+  --color-background: 252 248 255;
+  --color-on-background: 27 27 36;
+  --color-surface-variant: 228 225 238;
+}
+
+.dark {
+  --color-surface: 11 19 38;
+  --color-surface-dim: 11 19 38;
+  --color-surface-bright: 49 57 77;
+  --color-surface-container-lowest: 6 14 32;
+  --color-surface-container-low: 19 27 46;
+  --color-surface-container: 23 31 51;
+  --color-surface-container-high: 34 42 61;
+  --color-surface-container-highest: 45 52 73;
+  --color-on-surface: 218 226 253;
+  --color-on-surface-variant: 198 197 213;
+  --color-inverse-surface: 218 226 253;
+  --color-inverse-on-surface: 40 48 68;
+  --color-outline: 144 143 158;
+  --color-outline-variant: 69 70 83;
+  --color-surface-tint: 189 194 255;
+  --color-primary: 189 194 255;
+  --color-on-primary: 19 30 140;
+  --color-primary-container: 129 140 248;
+  --color-on-primary-container: 16 27 138;
+  --color-inverse-primary: 73 83 188;
+  --color-secondary: 123 208 255;
+  --color-on-secondary: 0 53 74;
+  --color-secondary-container: 0 166 224;
+  --color-on-secondary-container: 0 55 77;
+  --color-tertiary: 247 189 62;
+  --color-on-tertiary: 64 45 0;
+  --color-tertiary-container: 192 141 0;
+  --color-on-tertiary-container: 62 43 0;
+  --color-error: 255 180 171;
+  --color-on-error: 105 0 5;
+  --color-error-container: 147 0 10;
+  --color-on-error-container: 255 218 214;
+  --color-primary-fixed: 224 224 255;
+  --color-primary-fixed-dim: 189 194 255;
+  --color-on-primary-fixed: 0 7 103;
+  --color-on-primary-fixed-variant: 47 58 163;
+  --color-secondary-fixed: 196 231 255;
+  --color-secondary-fixed-dim: 123 208 255;
+  --color-on-secondary-fixed: 0 30 44;
+  --color-on-secondary-fixed-variant: 0 76 105;
+  --color-tertiary-fixed: 255 222 163;
+  --color-tertiary-fixed-dim: 247 189 62;
+  --color-on-tertiary-fixed: 38 25 0;
+  --color-on-tertiary-fixed-variant: 93 66 0;
+  --color-background: 11 19 38;
+  --color-on-background: 218 226 253;
+  --color-surface-variant: 45 52 73;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.background');
+    background-image: radial-gradient(circle at top right, theme('colors.surface-container-highest'), transparent 40%),
+                      radial-gradient(circle at bottom left, theme('colors.surface-container-low'), transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .ambient-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 24px 48px -12px rgba(62, 50, 211, 0.1);
+  }
+}
